@@ -5,17 +5,21 @@ import cron from "node-cron";
 const jobs = [
     {
         time: "0 22 * * *", // every day at 22:00 (10 PM)
-        message: () => "It's 10 PM, good night!",
+        message: () => "اللهم بك أصبحنا و بك أمسينا و بك  نحيا و بك نموت و إليك النشور",
     },
     {
         time: "21 22 * * *", // every day at 22:21 (10:21 PM)
-        message: () => "It's 10:21 PM, good night!",
-        targetIDs: ["100008907121641"], // list of ids that bot will send to, remove this to send to all group
+        message: () => "!عشره وعشرين دقيقه وما دايرين تنموموا-_-",
+        // list of ids that bot will send to, remove this to send to all group
+    },
+    {
+        time: "07 22 * * *", // every day at 22:21 (7:21 AM)
+        message: () => "!صبح صبح يا فالح قوم لحياتك كافح.... اذا كان عندك حياة اصلا-_-",
     },
 ];
 
 export default function autoSend() {
-    const timezone = global.config?.timezone || "Asia/Ho_Chi_Minh";
+    const timezone = global.config?.timezone || "Africa/Khartoum";
     if (!timezone) return;
 
     for (const job of jobs) {
@@ -26,20 +30,13 @@ export default function autoSend() {
                 for (const tid of job.targetIDs ||
                     Array.from(global.data.threads.keys()) ||
                     []) {
-                    setTimeout(async () => {
-                        try {
-                            const msg = await job.message();
-                            await global.api.sendMessage(
-                                typeof msg == "string"
-                                    ? {
-                                          body: job.message(),
-                                      }
-                                    : msg,
-                                tid
-                            );
-                        } catch (e) {
-														console.error(e);
-												}
+                    setTimeout(() => {
+                        global.api.sendMessage(
+                            {
+                                body: job.message(),
+                            },
+                            tid
+                        );
                     }, i++ * 300);
                 }
             },

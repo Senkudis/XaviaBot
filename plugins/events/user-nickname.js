@@ -1,82 +1,70 @@
-/**
- * 
- * @param {{ event: Extract<Parameters<TOnCallEvents>[0]["event"], { logMessageType: "log:user-nickname" }> }} param0 
- * @returns 
- */
 export default async function ({ event }) {
     const { api } = global;
-    const { threadID, author: authorID, logMessageData } = event;
+    const { threadID, author, logMessageData } = event;
     const { Threads, Users } = global.controllers;
-    const getThread = await Threads.get(threadID);
+    const getThread = await Threads.get(threadID) || {};
+    const getThreadData = getThread.data || {};
+    const getThreadInfo = getThread.info || {};
 
-		if (getThread == null) return;
 
-    const getThreadData = getThread.data;
-    const getThreadInfo = getThread.info;
-
-		const targetID = logMessageData.participant_id;
-
-		if (!getThreadInfo.hasOwnProperty('nicknames')) {
-				getThreadInfo.nicknames = {};
-		}
-
-    const oldNickname = getThreadInfo.nicknames[targetID] || null;
+    if (Object.keys(getThreadInfo).length === 0) return;
+    const oldNickname = getThreadInfo.nicknames[logMessageData.participant_id] || null;
     const newNickname = logMessageData.nickname;
-    let alertMsg, reversed = false;
-		
-		const isBotAction = authorID == global.botID;
-		const isNotAllowed = getThreadData.antiSettings?.antiChangeNickname == true;
-    if (isNotAllowed && !isBotAction) {
-				const isReversingIndex = global.data.temps.findIndex(i => i.type == 'antiChangeNickname' && i.threadID == threadID && i.targetID == targetID);
-        const isReversing = isReversingIndex != -1;
+    let smallCheck = false, atlertMsg, reversed = false;
+    if (getThreadData.antiSettings.antiChangeNickname == true) {
+        const isBot = author == botID;
+        const isReversing = global.data.temps.some(i => i.type == 'antiChangeNickname' && i.threadID == threadID);
+        if (!(isBot && isReversing)) {
+            global.data.temps.push({ type: 'antiChangeNickname', threadID: threadID });
 
-				if (!isBotAction && isReversing); // might bug
-        if (!isBotAction && !isReversing) {
-            global.data.temps.push({ type: 'antiChangeNickname', threadID: threadID, targetID: targetID });
+            await new Promise((resolve, reject) => {
+                api.changeNickname(oldNickname, threadID, logMessageData.participant_id, async (err) => {
+                    if (!err) reversed = true;
 
-						const result = await api.changeNickname(oldNickname, threadID, targetID).catch(_ => null);
-						if (result != null) {
-								reversed = true;
-						}
-
-						global.data.temps.splice(isReversingIndex, 1);
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                    global.data.temps.splice(global.data.temps.indexOf({ type: 'antiChangeNickname', threadID: threadID }), 1);
+                    resolve();
+                });
+            })
+        } else if (isBot) {
+            smallCheck = true;
         }
     } else {
-        getThreadInfo.nicknames[targetID] = newNickname;
+        getThreadInfo.nicknames[logMessageData.participant_id] = newNickname;
 
         await Threads.updateInfo(threadID, { nicknames: getThreadInfo.nicknames });
     }
 
-    if (!isBotAction && reversed && getThreadData.antiSettings?.notifyChange === true)
+    if (!smallCheck && reversed && getThreadData?.antiSettings?.notifyChange === true)
         api.sendMessage(getLang('plugin.events.user-nickname.reversed_t'), threadID);
 
-    if (!isBotAction && getThreadData.notifyChange?.registered?.length > 0) {
-        const authorName = (await Users.getInfo(authorID))?.name ?? authorID;
-        const targetName = (await Users.getInfo(targetID))?.name ?? targetID;
+    if (!smallCheck && getThreadData?.notifyChange?.status === true) {
+        const authorName = (await Users.getInfo(author))?.name || author;
+        const targetName = (await Users.getInfo(logMessageData.participant_id))?.name || logMessageData.participant_id;
 
-        if (authorID == targetID) {
-            alertMsg = getLang('plugin.events.user-nickname.changedBySelf', {
+        if (author == logMessageData.participant_id) {
+            atlertMsg = getLang('plugin.events.user-nickname.changedBySelf', {
                 authorName: authorName,
-                authorId: authorID,
+                authorId: author,
                 newNickname: newNickname
             })
         } else {
-            alertMsg = getLang('plugin.events.user-nickname.changedBy', {
+            atlertMsg = getLang('plugin.events.user-nickname.changedBy', {
                 authorName: authorName,
-                authorId: authorID,
+                authorId: author,
                 targetName: targetName,
-                targetId: targetID,
+                targetId: logMessageData.participant_id,
                 newNickname: newNickname
             })
         }
 
         if (reversed) {
-            alertMsg += getLang('plugin.events.user-nickname.reversed');
+            atlertMsg += getLang('plugin.events.user-nickname.reversed');
         }
 
         for (const rUID of getThreadData.notifyChange.registered) {
-            await global.utils.sleep(300);
-            api.sendMessage(alertMsg, rUID);
+            global.sleep(300);
+            api.sendMessage(atlertMsg, rUID);
         }
     }
 
