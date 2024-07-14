@@ -1,11 +1,11 @@
 const config = {
-    name: "levelup",
+    name: "المستوى",
     aliases: ["lvlup"],
     permissions: [1, 2],
-    description: "Turn on/off level up notification",
+    description: "تشغيل / إيقاف قياس رفع المستوى",
     usage: "[on/off]",
     cooldown: 5,
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

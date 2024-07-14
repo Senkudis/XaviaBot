@@ -1,11 +1,11 @@
 const config = {
-    name: "unsend",
-    aliases: ["gỡ"],
-    description: "Unsend bot's message",
+    name: "احذف",
+    aliases: ["احذف"],
+    description: "إلغاء إرسال رسالة من قبل البوت. ",
     usage: "[reply/on/off]",
     cooldown: 3,
-    permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    permissions: [1, 2],
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -60,7 +60,7 @@ async function onCall({ message, args, getLang, data, userPermissions }) {
         const input = args[0]?.toLowerCase();
         const isInputQuery = input == "on" || input == "off";
 
-        const isGroupAdmin = userPermissions.some(e => e == 1);
+        const isGroupAdmin = userPermissions.some(e => e == 0);
 
         if (isGroupAdmin && isInputQuery) {
             if (input == "on") {

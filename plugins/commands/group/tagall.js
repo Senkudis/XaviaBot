@@ -1,11 +1,11 @@
 const config = {
-    name: "tagall",
-    aliases: ["all", "everyone"],
+    name: "الجميع",
+    aliases: ["all", "everyone","الكل"],
     permissions: [1, 2],
-    description: "Menion all members in group",
+    description: "إشارة إلى جميع أعضاء المجموعة ",
     usage: "<text>",
     cooldown: 10,
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

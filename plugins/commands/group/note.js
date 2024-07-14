@@ -1,10 +1,10 @@
 const config = {
-    name: "note",
-    description: "note a message",
+    name: "ملاحظة",
+    description: "رسالة كملاحظة",
     usage: "[reply]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

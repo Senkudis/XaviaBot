@@ -1,12 +1,10 @@
-import { join } from "path";
-
 const config = {
-    name: "setjoin",
-    description: "set join message/gif",
-    usage: "[text/reply/help]",
+    name: "ضيافه",
+    description:" تحديد رسالة الترحيب بعضو جديد",
+    usage: "[نص/رد/help]",
     cooldown: 3,
     permissions: [1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -39,15 +37,15 @@ const langData = {
     }
 }
 
-function ensureExits() {    
-    if (global.utils.isExists(join(global.pluginsPath, "events", "subscribeGifs"), "dir")) return;
-    global.createDir(join(global.pluginsPath, "events", "subscribeGifs"));
+function ensureExits() {
+    if (global.isExists(`${global.mainPath}/plugins/events/subcribeGifs`)) return;
+    global.createDir(`${global.mainPath}/plugins/events/subcribeGifs`);
 }
 
 function deleteThreadGif(threadID) {
     return new Promise(async (resolve, reject) => {
         try {
-            const gifPath = `${global.mainPath}/plugins/events/subscribeGifs/${threadID}.gif`;
+            const gifPath = `${global.mainPath}/plugins/events/subcribeGifs/${threadID}.gif`;
             if (global.isExists(gifPath)) {
                 global.deleteFile(gifPath);
             }
@@ -62,7 +60,7 @@ function deleteThreadGif(threadID) {
 function downloadGif(threadID, url) {
     return new Promise(async (resolve, reject) => {
         try {
-            await global.downloadFile(`${global.mainPath}/plugins/events/subscribeGifs/${threadID}.gif`, url);
+            await global.downloadFile(`${global.mainPath}/plugins/events/subcribeGifs/${threadID}.gif`, url);
             resolve(true);
         } catch (e) {
             console.error(e);

@@ -1,11 +1,11 @@
 const config = {
-    name: "rules",
-    aliases: ["rule"],
-    description: "Setting rules for group",
-    usage: "[add/remove] [rule]",
+    name: "القواعد",
+    aliases: ["rule", "القوانين"],
+    description: "وضع قوانين المجموعة",
+    usage: "[add/remove] [القاعدة]",
     cooldown: 3,
-    permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    permissions: [1, 2],
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

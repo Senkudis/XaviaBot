@@ -1,10 +1,10 @@
 const config = {
-    name: "threadnoti",
-    permissions: [1, 2],
-    description: "Turn on/off thread notification for yourself",
+    name: "اعلامات",
+    permissions: [2],
+    description: "تشغيل / إيقاف اشعاري بشأن تغييرات في المجموعة ",
     usage: "[on/off]",
     cooldown: 5,
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -53,6 +53,12 @@ async function changeConfig(threadID, senderID, option) {
         notifyChange.registered.splice(notifyChange.registered.indexOf(String(senderID)), 1);
     } else {
         throw "Already";
+    }
+
+    if (notifyChange.registered.length == 0) {
+        notifyChange.status = false;
+    } else {
+        notifyChange.status = true;
     }
 
     await Threads.updateData(threadID, { notifyChange: notifyChange });
