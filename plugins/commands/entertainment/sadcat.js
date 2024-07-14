@@ -1,10 +1,10 @@
 const config = {
-    name: "sadcat",
-    description: "sadcat meme maker",
-    usage: "[text]",
+    name: "حزينة",
+    description: "صانع ميم  هرة حزينة",
+    usage: "[نص]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakdس"
 }
 
 const langData = {

@@ -1,10 +1,10 @@
 const config = {
-    name: "drake",
-    description: "drake meme maker",
-    usage: "[text1] | [text2]",
+    name: "دريك",
+    description: "اصنع ميم دريك",
+    usage: "[نص1] | [نص2]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

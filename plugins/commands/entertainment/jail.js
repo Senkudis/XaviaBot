@@ -3,10 +3,10 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const config = {
-    name: "jail",
-    description: "Jail a user",
+    name: "سجن",
+    description: "أسجن عضو",
     usage: "<@mention/reply>",
-    credits: "XaviaTeam",
+    credits: "XaviaTeam | Diyakd",
     cooldown: 5
 }
 

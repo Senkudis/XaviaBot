@@ -1,10 +1,10 @@
 const config = {
-    name: "pooh",
-    description: "pooh meme maker",
-    usage: "[text1] | [text2]",
+    name: "دبدوب",
+    description: "صانع ميم  ويني الدبدوب",
+    usage: "[نص1] | [نص2]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

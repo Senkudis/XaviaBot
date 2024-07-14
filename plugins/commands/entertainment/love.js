@@ -3,10 +3,10 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const config = {
-    name: "love",
+    name: "حب",
     description: "Love banner with a user",
     usage: "<@mention/reply>",
-    credits: "XaviaTeam",
+    credits: "Diyakd",
     cooldown: 5
 }
 
@@ -42,9 +42,9 @@ const langData = {
         "missingTarget": "Please mention/reply to a user",
         "loveMessage": "Together till the end of time <3"
     },
-    "vi_VN": {
-        "missingTarget": "Vui lòng tag hoặc reply một người dùng",
-        "loveMessage": "Mãi bên nhau bạn nhé <3"
+    "ar_SY": {
+        "missingTarget": "تاق الزول او الزولة! ",
+        "loveMessage":" تحبو بعض للجنة إن شاءلله ❤"
     }
 }
 
@@ -78,17 +78,9 @@ async function onCall({ message, getLang }) {
         message.reply("Error");
     }
 
-    cleanup(savePath, avatarPathOne, avatarPathTwo);
-}
-
-function cleanup(savePath, avatarPathOne, avatarPathTwo) {
-    try {
-        if (global.isExists(savePath)) global.deleteFile(savePath);
-        if (global.isExists(avatarPathOne)) global.deleteFile(avatarPathOne);
-        if (global.isExists(avatarPathTwo)) global.deleteFile(avatarPathTwo);
-    } catch (e) {
-        console.error(e);
-    }
+    if (global.isExists(savePath)) global.deleteFile(savePath);
+    if (global.isExists(avatarPathOne)) global.deleteFile(avatarPathOne);
+    if (global.isExists(avatarPathTwo)) global.deleteFile(avatarPathTwo);
 }
 
 export default {
