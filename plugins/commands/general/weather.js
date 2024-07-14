@@ -1,10 +1,10 @@
 const config = {
-    name: "weather",
-    description: "Get weather info",
+    name: "الطقس",
+    description: "تعرف على الطقس حالياً. ",
     usage: "[location]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "xaviaTeam"
+    credits: "xaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -14,17 +14,11 @@ const langData = {
         "results": "Thời tiết tại {name}:\nNhiệt độ: {temperture}°C\nThời gian: {day}, {date}\nThời gian quan sát: {observationtime}\nĐiểm quan sát: {observationpoint}\nTrạng thái: {skytext}\nTốc độ gió: {windspeed}\nĐộ ẩm: {humidity}",
         "error": "Đã xảy ra lỗi"
     },
-    "en_US": {
-        "missingInput": "Please enter a location",
-        "notFound": "Location not found",
-        "results": "Weather at {name}:\nTemperature: {temperture}°C\nTime: {day}, {date}\nObservation time: {observationtime}\nObservation point: {observationpoint}\nSky status: {skytext}\nWind speed: {windspeed}\nHumidity: {humidity}",
-        "error": "An error has occurred"
-    },
     "ar_SY": {
-        "missingInput": "الرجاء إدخال موقع",
-        "notFound": "الموقع غير موجود",
-        "results": "الطقس في {name}:\nدرجة الحرارة: {temperture}°C\الوقت: {day}, {date}\وقت المراقبة: {observationtime}\nنقطة المراقبة: {observationpoint}\nحالة السماء: {skytext}\nسرعة الريح: {windspeed}\nالرطوبة: {humidity}",
-        "error": "حدث خطأ"
+        "missingInput": "الرجاء إدخال الموقع",
+        "notFound": "الموقع غير معروف ❌",
+        "results": " حالة الطقس في: {name}:\n❄ الحرارة: {temperture}°C\n 🕦الوقت: {day}, {date}\nوقت التحقق: {observationtime}\nنقطة التحقق: {observationpoint}\nحالة السماء: {skytext}\n سرعة الرياح: {windspeed}\n الرطوبة: {humidity}",
+        "error": "حدث خطأ ❌"
     }
 }
 
