@@ -2,8 +2,8 @@ const langData = {
     "en_US": {
         "prefix.get": "Prefix is: {prefix}"
     },
-    "vi_VN": {
-        "prefix.get": "Prefix hiện tại là: {prefix}"
+    "ar_SY": {
+        "prefix.get": "بادئة الأوامر هي: {prefix}"
     }
 }
 

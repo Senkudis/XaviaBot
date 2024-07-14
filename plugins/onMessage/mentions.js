@@ -4,10 +4,10 @@ const langData = {
         "isAFKReason": "This person is busy. Reason: {reason}",
         "botMention": "What can I help you?"
     },
-    "vi_VN": {
-        "isAFK": "Người này đang bận.",
-        "isAFKReason": "Người này đang bận. Lý do: {reason}",
-        "botMention": "Bạn cần gì ạ?"
+    "ar_SY": {
+        "isAFK": "هذا الشخص مشغول.",
+        "isAFKReason": "هذا الشخص مشغول بسبب: {reason}",
+        "botMention": "كيف أقدر أساعدك؟ 🐥"
     }
 }
 
