@@ -1,5 +1,4 @@
 import moment from "moment-timezone";
-import { Balance } from "../core/handlers/balance.js";
 
 const config = {
     limitNumber: 1000,
@@ -24,10 +23,7 @@ async function findTheWinners() {
             body: `💵== Lottery ==💵\nCongrats you won the lottery with lag bonus: ${defaultBonus}`
         }, player)
 
-        const userBalance = Balance.from(player);
-        if (userBalance == null) continue;
-
-        userBalance.add(Math.ceil(defaultBonus / playersWinBet.length))
+        global.controllers.Users.increaseMoney(player, Math.ceil(defaultBonus / playersWinBet.length))
     }
 
     for(let player of playersLoseBet) {
@@ -43,7 +39,7 @@ async function findTheWinners() {
 }
 
 async function execute() {
-    const timezone = global.config?.timezone || "Asia/Ho_Chi_Minh";
+    const timezone = global.config?.timezone || "Africa/Khartoum";
     if (!timezone) return;
 
     const tz = moment.tz(timezone).format("MM/DD/YYYY HH:mm:ss")
