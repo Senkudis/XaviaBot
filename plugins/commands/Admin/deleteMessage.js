@@ -1,11 +1,11 @@
 const config = {
-    name: "delmsg",
-    aliases: ["deletemsg", "delmessage", "deletemessage"],
-    description: "delete group message",
+    name: "مسح_رسالة",
+    aliases: ["deletemsg", "delmessage", "deletemessage","مسح"],
+    description: "مسح رسالة المجموعة ",
     usage: "[all]",
     cooldown: 3,
     permissions: [2],
-    credits: "XaviaTeam",
+    credits: "XaviaTeam | Diyakd",
     isAbsolute: true
 }
 

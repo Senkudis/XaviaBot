@@ -1,10 +1,10 @@
 const config = {
-    name: "maintain",
-    description: "on/off maintain mode",
+    name: "صيانة",
+    description: "تشغيل/ايقاف وضع الصيانة",
     usage: "[on/off]",
     cooldown: 3,
     permissions: [2],
-    credits: "XaviaTeam",
+    credits: "XaviaTeam | Diyakd",
     isAbsolute: true
 }
 

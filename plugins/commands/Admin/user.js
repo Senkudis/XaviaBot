@@ -1,19 +1,19 @@
 const config = {
-    name: "user",
+    name: "ban",
     description: "ban/unban a user",
     version: "0.0.1-beta",
     usage: "[tag/reply]",
     cooldown: 3,
-    permissions: [1, 2],
-    credits: "XaviaTeam"
+    permissions: [2],
+    credits: "XaviaTeam | Diyakd. "
 }
 
 const langData = {
-    "vi_VN": {
-        "missingTarget": "Vui lòng tag/reply người cần ban.",
-        "noData": "Dữ liệu không khả dụng...",
-        "success": "Thành công!",
-        "error": "lỗi"
+    "ar_SY": {
+        "missingTarget": "تاق أو رد على رسالة المطلوب حظره..",
+        "noData": "لا توجد بيانات...",
+        "success": "تم حظر العضو بنجاح!",
+        "error": "حدث خطأ. "
     },
     "en_US": {
         "missingTarget": "Please tag/Reply to a user that you want to ban.",

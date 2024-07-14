@@ -1,10 +1,10 @@
 const config = {
-    name: "sendnoti",
-    aliases: ["sendnotification"],
+    name: "اشعار",
+    aliases: ["sendnotification","إشعار"],
     description: "Send notification to all groups",
     usage: "[message/reply]",
     permissions: [2],
-    credits: "XaviaTeam"
+    credits: "Diyakd"
 }
 
 const langData = {
