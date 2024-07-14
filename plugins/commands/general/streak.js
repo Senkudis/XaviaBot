@@ -1,10 +1,10 @@
 const config = {
-    name: "streak",
-    description: "Day counting...",
+    name: "تقويم",
+    description: "عداد الأيام...",
     usage: "[start/set/relapse/stop]",
     cooldown: 5,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "Diyakd"
 }
 
 const langData = {

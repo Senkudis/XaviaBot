@@ -1,11 +1,11 @@
 const config = {
-    name: "ninoteach",
-    aliases: ["teach"],
-    description: "Teach Nino",
-    usage: "[text] => [reply]",
+    name: "علمو",
+    aliases: ["تعليم"],
+    description: "علم كيدي كيفية الكلام",
+    usage: " ",
     cooldown: 3,
-    permissions: [0, 1, 2],
-    credits: "XaviaTeam",
+    permissions: [2],
+    credits: "XaviaTeam | Diyakd",
 }
 
 const langData = {

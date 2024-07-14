@@ -1,9 +1,9 @@
 const config = {
-    name: "trans",
+    name: "ترجم",
     aliases: ['translate', 'dich'],
-    description: "Translate text to bot language.",
+    description: "ترجم الكلام للغة البوت.",
     usage: '[lang] [text]',
-    credits: 'XaviaTeam'
+    credits: 'XaviaTeam | Diyakd'
 }
 
 const langData = {
@@ -32,7 +32,7 @@ function onCall({ message, args, getLang, data }) {
     const langInput = args[0]?.toLowerCase();
     const threadLang = (data?.thread?.data?.language || global.config.LANGUAGE)?.slice(0, 2);
     const targetLang = langInput || threadLang;
-    const lang_to = supportedLangs.includes(targetLang) ? targetLang : "en";
+    const lang_to = supportedLangs.includes(targetLang) ? targetLang : "ar";
     const text = type == "message_reply" ? message.messageReply.body : supportedLangs.includes(langInput) ? args.slice(1).join(" ") : args.join(" ");
 
     if (!text) return reply(getLang('trans.error.noText'));

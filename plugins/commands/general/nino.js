@@ -1,11 +1,11 @@
 const config = {
-    name: "nino",
+    name: "كيدي",
     version: "1.1.0",
-    description: "talk with nino",
-    usage: "[text]",
+    description: "دردش مع كيدي",
+    usage: "[أي نص]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | diyakd"
 }
 
 const langData = {
@@ -28,13 +28,13 @@ const langData = {
         "error": "Có lỗi xảy ra, vui lòng thử lại sau"
     },
     "ar_SY": {
-        "on": "Nino is now on",
-        "off": "Nino is now off",
-        "alreadyOn": "Nino is already on",
-        "alreadyOff": "Nino is already off",
-        "missingInput": "الرجاء إدخال المحتوى الذي تريد الدردشة مع نينو",
-        "noResult": "نينو لا تفهم ما تقول :(",
-        "error": "لقد حدث خطأ، رجاء أعد المحاولة لاحقا"
+        "on": "تم تشغيل كيدي 😀",
+        "off": "تم إيقاف كيدي 😴",
+        "alreadyOn": "kede is already on",
+        "alreadyOff": "kede is already off",
+        "missingInput": "الرجاء إدخال المحتوى الذي تريد الدردشة مع كيدي 🐥",
+        "noResult": "كيدي لا يفهم ما تقول :(",
+        "error": "حدث خطأ,امش كمل قرايتك وتعال "
     }
 }
 

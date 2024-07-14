@@ -3,9 +3,10 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const config = {
-    description: 'Get your global/local rank',
+   name:"تصنيف", 
+    description: 'عرض مستوى تفاعلك الحالي.',
     usage: "[-g/-l] [@mention/reply]",
-    credits: "XaviaTeam",
+    credits: "XaviaTeam | Diyakd",
     cooldown: 10
 }
 
@@ -60,7 +61,7 @@ async function makeCard(data) {
 
         ctx.font = 'bold 15px sans-serif';
         ctx.fillStyle = '#ffffff';
-        ctx.fillText(`Rank ${rank}`, 136, 66);
+        ctx.fillText(` المرتبة${rank}`, 136, 66);
 
         ctx.font = 'bold 13px sans-serif';
         ctx.fillStyle = '#ffffff';
@@ -129,7 +130,7 @@ async function onCall({ message, args, getLang }) {
             return message.reply(getLang(_listOf == 'global' ? "rank_all_global" : "rank_all_local", {
                 senderExp,
                 senderRank,
-                allData: (_listOf == 'global' ? allData_withName.slice(0, 20) : allData_withName).map((e, i) => `${i + 1}. ${e.name} (${e.userID}) - ${e.exp} exp`).join('\n')
+                allData: (_listOf == 'global' ? allData_withName.slice(0, 20) : allData_withName).map((e, i) => `${i + 1}. ${e.name}  - ${e.exp} exp`).join('\n ◆')
             }))
         }
 

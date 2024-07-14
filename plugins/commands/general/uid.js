@@ -1,5 +1,6 @@
 const config = {
-    credits: "XaviaTeam"
+  name: "معرف", 
+    credits: "Diyakd"
 }
 
 function onCall({ message }) {

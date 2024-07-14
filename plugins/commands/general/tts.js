@@ -1,9 +1,9 @@
 const config = {
-    name: "say",
-    aliases: ["tts", "talk", "speak"],
-    description: "Text to speech",
-    usage: '[text]',
-    credits: "XaviaTeam"
+    name: "قول",
+    aliases: ["tts", "talk", "speak", "قل"],
+    description: "تحويل النص لكلام",
+    usage: '[أي نص]',
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -30,11 +30,11 @@ function onCall({ message, args, getLang }) {
             lang = args[0];
             text = [...args].slice(1).join(' ');
             if (!supportedLangs.includes(lang)) {
-                lang = "vi";
+                lang = "ar";
                 text = args.join(' ');
             }
         } else {
-            lang = "vi";
+            lang = "ar";
             text = args[0];
         }
 

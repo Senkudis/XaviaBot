@@ -1,7 +1,7 @@
 const config = {
-    name: "source",
+    name: "المصدر",
     aliases: ["code", "about"],
-    description: "Show source code of bot"
+    description: "عرض الكود المصدري للبوت"
 }
 
 const langData = {
@@ -12,11 +12,11 @@ const langData = {
         "details": "Bot Messenger chạy trên NodeJS:\n{source}"
     },
     "ar_SY": {
-        "details": "روبوت ماسنجر يعمل على لغة NodeJS:\n{source}"
+        "details": "روبوت ماسنجر يعمل على لغة NodeJS من تطوير فريق Xavia و مساهمة Diyakd:\n{source}"
     }
 }
 
-const source = "https://github.com/XaviaTeam/XaviaBot";
+const source = "https://www.facebook.com/DiyaAldinKD";
 function onCall({ message, getLang }) {
     message.reply(getLang("details", { source }));
 }
