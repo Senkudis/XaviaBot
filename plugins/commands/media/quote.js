@@ -1,10 +1,10 @@
 const config = {
-    name: "quote",
-    description: "Anime Quotes!",
+    name: "مقولة",
+    description: "مقولة لشخصية انمي!",
     usage: "[character]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

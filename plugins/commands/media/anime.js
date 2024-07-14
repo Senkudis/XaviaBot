@@ -1,10 +1,10 @@
 const config = {
-    name: "anime",
-    description: "anime images",
+    name: "انمي",
+    description: "صور أنمي",
     usage: "[category]",
     cooldown: 3,
     permissions: [0, 1, 2],
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -22,7 +22,7 @@ const langData = {
     }
 }
 
-const endpoints = ["waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "kiss", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe"]
+const endpoints = ["neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug", "awoo", "lick", "pat", "smug", "bonk", "yeet", "blush", "smile", "wave", "highfive", "handhold", "nom", "bite", "glomp", "slap", "kill", "kick", "happy", "wink", "poke", "dance", "cringe"]
 
 async function onCall({ message, args, getLang }) {
     try {

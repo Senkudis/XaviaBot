@@ -7,13 +7,13 @@ import { statSync } from "fs";
 const _48MB = 48 * 1024 * 1024;
 
 const config = {
-    name: "audio",
+    name: "صوت",
     aliases: ['yt2mp3', 'sing'],
     version: "1.0.3",
-    description: "Play music from youtube",
+    description: "تشغيل الصوتيات من اليوتيوب ",
     usage: '<keyword/url>',
     cooldown: 30,
-    credits: "XaviaTeam",
+    credits: "XaviaTeam | Diyakd",
     extra: {
         "MAX_SONGS": 6
     }
