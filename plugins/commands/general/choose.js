@@ -1,9 +1,9 @@
 const config = {
-    name: "choose",
-    usage: "option1 | option2 | option3 | ...",
-    description: "Choose one of the options",
+    name: "اختار",
+    usage: "خيار1 | خيار2 | خيار3 | ...",
+    description: "اختيار واحد من بين عدة خيارات. ",
     cooldown: 5,
-    credits: "XaviaTeam"
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {

@@ -1,13 +1,13 @@
 const config = {
-    name: "help",
+    name: "مساعدة",
     _name: {
         "ar_SY": "الاوامر"
     },
-    aliases: ["cmds", "commands"],
+    aliases: ["cmds", "commands","مساعده"],
     version: "1.0.3",
-    description: "Show all commands or command details",
-    usage: "[command] (optional)",
-    credits: "XaviaTeam"
+    description: "عرض كل أوامر البوت مع وصف استخدامها. ",
+    usage: "[الأمر] (اختياري)",
+    credits: "XaviaTeam | Diyakd"
 }
 
 const langData = {
@@ -93,9 +93,8 @@ async function onCall({ message, args, getLang, userPermissions, prefix }) {
         }
 
         let list = Object.keys(commands)
-            .map(category => `⌈ ${category.toUpperCase()} ⌋\n${commands[category].join(", ")}`)
+            .map(category => `⌈ ${category.toUpperCase()} ⌋\n${commands[category].join("  |  ◆  \n  ")}`)
             .join("\n\n");
-
         message.reply(getLang("help.list", {
             total: Object.values(commands).map(e => e.length).reduce((a, b) => a + b, 0),
             list,
@@ -129,4 +128,4 @@ export default {
     config,
     langData,
     onCall
-}
+          }
