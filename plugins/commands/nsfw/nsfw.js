@@ -1,6 +1,6 @@
 const config = {
-    name: "nsfw",
-    description: "On/Off Nsfw",
+    name: "",
+    description: "O",
     usage: "[on/off]",
     cooldown: 3,
     permissions: [1, 2],
