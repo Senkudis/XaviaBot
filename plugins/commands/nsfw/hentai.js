@@ -1,6 +1,6 @@
 const config = {
-    name: "hentai",
-    description: "hentai images",
+    name: "لا يعمل",
+    description: "",
     usage: "[category]",
     cooldown: 3,
     permissions: [0, 1, 2],
