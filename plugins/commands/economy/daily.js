@@ -27,7 +27,7 @@ const langData = {
     "ar_SY": {
         "daily.selfNoData": "البيانات الخاصة بك ليست جاهزة",
         "daily.alreadyClaimed": "لقد طالبت بالفعل على مكافأتك اليومية ، يمكنك المطالبة مرة أخرى في {time}",
-        "daily.successfullyClaimed": "لقد طالبت بمكافأتك اليومية البالغة {amount}KC",
+        "daily.successfullyClaimed": "لقد طالبت بمكافأتك اليومية البالغة {amount}KD",
         "daily.failed": "فشل"
     }
 }
