@@ -31,9 +31,9 @@ const langData = {
     "ar_SY": {
         "missingMention": "تحتاج إلى ذكر شخص ما لإرسال الأموال إليه",
         "invalidAmount": "مبلغ غير صحيح",
-        "lowerThanMin": "الحد الأدنى للمبلغ هو {minAmount} KC",
-        "notEnoughMoney": "ليس لديك ما يكفي من المال ، فأنت بحاجة إلى المزيد {amount} KC",
-        "sendSuccessFee": "لقد ارسلت {amount} KC الى {name} (مصاريف: {fee} KC)",
+        "lowerThanMin": "الحد الأدنى للمبلغ هو {minAmount} KD",
+        "notEnoughMoney": "ليس لديك ما يكفي من المال ، فأنت بحاجة إلى المزيد {amount} KD",
+        "sendSuccessFee": "لقد ارسلت {amount} KD الى {name} (مصاريف: {fee} KD)",
         "error": "لقد حدث خطأ، رجاء أعد المحاولة لاحقا"
     }
 }
