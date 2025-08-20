@@ -8,7 +8,7 @@ const config = {
     name: "عمل",
     aliases: ["wk","شغل"],
     description: "اشتغل و أصرف قروش",
-    credits: "XaviaTeam | Diyakdس",
+    credits: "XaviaTeam | Diyakd",
     extra: {
         min: 200,
         max: 1000,
@@ -32,7 +32,7 @@ const langData = {
     "ar_SY": {
         "work.selfNoData": "البيانات الخاصة بك ليست جاهزة",
         "work.alreadyWorked": "لقد عملت ، يمكنك العمل مرة أخرى لاحقًا {time}",
-        "work.successfullyWorked": "لقد عملت وكسبت {amount}KC",
+        "work.successfullyWorked": "لقد عملت وكسبت {amount}KD",
         "work.failed": "باءت بالفشل"
     }
 }
