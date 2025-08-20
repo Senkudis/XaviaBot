@@ -1,6 +1,16 @@
-import { Configuration, OpenAIApi } from "openai"
+import OpenAI from "openai";
 
-const apiKey = "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"
+const openai = new OpenAI({
+  apiKey: "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",
+});
+
+const response = openai.responses.create({
+  model: "gpt-4o-mini",
+  input: "write a haiku about ai",
+  store: true,
+});
+
+response.then((result) => console.log(result.output_text)); 
 
 const config = {
     name: "صمم",
