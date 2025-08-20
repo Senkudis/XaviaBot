@@ -21,7 +21,7 @@ const langData = {
     "ar_SY": {
         "balance.userNoData": "المستخدم غير موجود / غير جاهز",
         "balance.selfNoData": "البيانات الخاصة بك ليست جاهزة",
-        "balance.result": "رصيدك الحالي هو: {money}KC"
+        "balance.result": "رصيدك الحالي هو: {money}KD"
     }
 }
 
